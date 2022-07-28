@@ -39,15 +39,39 @@ key | type
 
 ## Usage
 
-To update the database with data from a payload (see the specification below), run `process_payload`.
+To update the database with data from a payload, run:
 
-To receive a summary of members' up-to-date statistics for a specific studio, run `get_class_summary`. See the specification below.
+```
+process_payload(payload)
+```
 
-## Testing:
+where `payload` is the payload. See the [payload specification](#payload-specification) below.
 
-The provided unit testing functions to test `process_payload` and `get_class_summary` are `test_process_payload` and `test_get_class_summary`, respectively.
+To receive a summary of members' up-to-date statistics for a specific studio during or after a class, run:
 
-## Payload Specification:
+```
+get_class_summary(studio_id)
+```
+
+where `studio_id` is the ID of the studio for which to obtain the class summary. See the [class summary specification](#class-summary-specification) below.
+
+## Testing
+
+To test `process_payload`, run:
+
+```
+test_process_payload()
+```
+
+To test `get_class_summary`, run:
+
+```
+test_get_class_summary()
+```
+
+Note that the tables `studios` and `members` in the database *must* be empty to run these tests.
+
+## Payload Specification
 
 The program expects the payload to be a JSON object encoded as a string. The object itself should have the following specifications:
 
@@ -74,7 +98,7 @@ The program expects the payload to be a JSON object encoded as a string. The obj
 `<speed>`: The programmed speed of the treadmill in miles per hour.
 `<distance>`: The cumulative distance reported by the treadmill.
 
-## Class Summary Specification:
+## Class Summary Specification
 
 ```
 {
