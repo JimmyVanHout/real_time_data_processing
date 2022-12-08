@@ -14,7 +14,7 @@ git clone https://github.com/JimmyVanHout/real_time_data_processing.git
 
 ## Set Up
 
-Before running the program, either run the provided helper function initialize_database or manually create an SQLite database with the following tables and set the global variable `DATABASE_FILE_NAME` to the file name of the database:
+Before running the program, either run the provided helper function `initialize_database` or manually create an SQLite database with the following tables and set the global variable `DATABASE_FILE_NAME` to the file name of the database:
 
 `studios`:
 
